@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能导游系统</title>
+    <link rel="stylesheet" href="2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>智能导游系统</h1>
+        
+        <div class="camera-container">
+            <div class="camera-box">
+                <h3>前置摄像头</h3>
+                <video id="frontVideo" autoplay playsinline></video>
+                <button id="frontCaptureBtn">拍照</button>
+                <canvas id="frontCanvas" style="display:none;"></canvas>
+            </div>
+            
+            <div class="camera-box">
+                <h3>后置摄像头</h3>
+                <video id="backVideo" autoplay playsinline></video>
+                <button id="backCaptureBtn">拍照</button>
+                <canvas id="backCanvas" style="display:none;"></canvas>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="startBtn">启动摄像头</button>
+            <button id="stopBtn" disabled>停止摄像头</button>
+            <button id="captureBtn" disabled>拍照并分析</button>
+        </div>
+        
+        <div class="status">
+            <p id="statusText">状态: 未启动</p>
+            <p id="countText">已拍摄照片: 0</p>
+        </div>
+        
+        <div class="result">
+            <h3>导游讲解:</h3>
+            <div id="guideText"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="2.js"></script>
+</body>
+</html>
