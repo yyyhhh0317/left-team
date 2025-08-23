@@ -21,7 +21,7 @@ const guideText = document.getElementById('guideText');
 // 初始化
 document.addEventListener('DOMContentLoaded', () => {
     // 连接WebSocket服务器
-    socket = io('https://1112303hi76bm.vicp.fun:443');
+    socket = io('https://7311ob1wp635.vicp.fun');
     
     // 处理服务器消息
     socket.on('connect', () => {
