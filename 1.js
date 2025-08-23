@@ -179,11 +179,20 @@ function stopCameras() {
     startBtn.disabled = false;
     stopBtn.disabled = true;
     captureBtn.disabled = true;
-    speakBtn.disabled = true; // 禁用语音按钮
-    pauseBtn.disabled = true; // 禁用暂停按钮
 
     updateStatus('摄像头已停止');
 }
+
+function stopSpeech() {
+    if (currentUtterance) {
+        window.speechSynthesis.cancel();
+        currentUtterance = null;
+    }
+    speakBtn.disabled = true;
+    pauseBtn.disabled = true;
+    updateStatus('语音播报已停止');
+}
+
 
 // 拍照函数
 function capturePhoto(video, canvas) {
