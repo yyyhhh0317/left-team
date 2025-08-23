@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能导游系统</title>
+    <link rel="stylesheet" href="3.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>智能导游系统</h1>
+
+        <div class="camera-container">
+            <div class="camera-box">
+                <h3>摄像头</h3>
+                <video id="video" autoplay playsinline></video>
+                <div class="controls">
+                    <button id="startBtn">启动摄像头</button>
+                    <button id="stopBtn" disabled>停止摄像头</button>
+                </div>
+                <div class="controls">
+                    <button id="captureFaceBtn" disabled>拍摄表情</button>
+                    <button id="captureSceneBtn" disabled>拍摄景点</button>
+                </div>
+                <canvas id="canvas" style="display:none;"></canvas>
+            </div>
+        </div>
+
+        <!-- 添加风格选择按钮 -->
+        <div class="style-selection">
+            <h3>选择讲解风格:</h3>
+            <button id="humorBtn" class="style-btn" data-style="humor">幽默型</button>
+            <button id="calmBtn" class="style-btn" data-style="calm">平静型</button>
+            <button id="academicBtn" class="style-btn" data-style="academic">学术型</button>
+        </div>
+
+        <div class="controls">
+            <button id="analyzeBtn" disabled>分析并生成讲解</button>
+        </div>
+
+        <!-- 语音控制按钮 -->
+        <div class="voice-controls">
+            <button id="speakBtn" disabled>语音输出</button>
+            <button id="pauseBtn" disabled>暂停播报</button>
+        </div>
+
+        <div class="status">
+            <p id="statusText">状态: 未启动</p>
+            <p id="countText">已拍摄照片: 0</p>
+        </div>
+
+        <div class="result">
+            <h3>导游讲解:</h3>
+            <div id="guideText"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="3.js"></script>
+</body>
+
+</html>
